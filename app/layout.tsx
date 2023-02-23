@@ -1,5 +1,4 @@
 
-'use client'
 
 import SideBar from '../components/SideBar'
 import '../styles/globals.css'
@@ -7,12 +6,12 @@ import {SessionProvider} from "../components/SessionProvider"
 import {getServerSession} from "next-auth"
 import {authOptions} from "../pages/api/auth/[...nextauth]"
 import Login from '../components/Login'
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: {
   children: React.ReactNode
 }) {
-  const session = getServerSession(authOptions)
+  const session =await  getServerSession(authOptions)
     
   return (
     <html>
